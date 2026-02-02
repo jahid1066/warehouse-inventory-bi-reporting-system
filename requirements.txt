@@ -1,0 +1,13 @@
+# Requirements for Warehouse Data Management System Project
+
+# For working with SQL and databases
+sqlite3               # Built-in with Python (if using SQLite)
+mysql-connector-python>=8.0  # If using MySQL
+psycopg2-binary>=2.9  # If using PostgreSQL
+
+# Optional tools
+pandas>=2.0           # For data manipulation and analysis (optional)
+sqlalchemy>=2.0       # ORM and advanced SQL handling (optional)
+
+# Documentation and visualization
+graphviz              # ER diagram generation (optional)
