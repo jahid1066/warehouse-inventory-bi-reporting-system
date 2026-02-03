@@ -1,151 +1,123 @@
-# Warehouse & Inventory BI Reporting System
-### SQL-Driven Warehouse & Inventory Analytics
-
-A complete Business Intelligence project using MySQL and Power BI,
-focused on warehouse operations, inventory monitoring, supplier analysis,
-and management reporting.
-
+# Warehouse & Inventory BI Reporting System  
+**SQL-Based Business Intelligence Project with Power BI**
 
 ## Project Overview
+This project demonstrates a **practical Business Intelligence (BI) and Data Analytics solution** based on an **ERP-style relational database**.  
+The goal is to provide **decision-ready reporting and KPIs** for **warehouse, inventory, supplier, and staff analysis**, similar to real-world use cases in companies.
 
-This project demonstrates a practical Business Intelligence (BI) reporting solution using MySQL (SQL views) and Power BI. It simulates an ERP-style warehouse and supplier environment and focuses on structured reporting, KPI monitoring, and decision support, as commonly used in companies.
+The project focuses on **SQL, data modeling, KPI reporting, and Power BI dashboards**.
 
 ---
 
 ## Business Objectives
+Management and controlling departments require answers to the following questions:
 
-The project answers key business questions for management, controlling, and operations:
+- Which products and suppliers are active?
+- What is the current inventory and capacity status?
+- Which warehouses are near capacity?
+- Which goods are stored in multiple warehouses?
+- How are staff members associated with suppliers?
 
-Which products and suppliers generate the highest value?
-
-What is the current inventory status across warehouses?
-
-Which warehouses are close to full capacity?
-
-Which goods are stored in multiple warehouses?
-
-How are staff members linked to suppliers?
-
-How many goods does each supplier provide?
+This project provides **structured SQL views** and **Power BI dashboards** to support these decisions.
 
 ---
 
 ## Data Model (ERP-style)
+The database is designed in a **normalized ERP structure** and includes:
 
-The database is built using a relational ERP-style schema:
+- `Supplier` – supplier master data  
+- `Goods` – product and pricing data  
+- `Staff` – employee information  
+- `Warehouse` – warehouse locations and capacity  
+- `Store` – goods stored per warehouse  
 
-Supplier – supplier master data
-
-Staff – employees responsible for suppliers
-
-Goods – product master data
-
-Warehouse – warehouse master data
-
-Store – many-to-many relationship between goods and warehouses
-
-All reporting logic is implemented using SQL views, which act as a semantic BI layer.
+The schema reflects **realistic enterprise data modeling** used in logistics and inventory systems.
 
 ---
 
-## SQL BI Views
+## SQL Views (Core of BI Layer)
 
-The following SQL views are used for reporting and dashboards:
+| View Name | Purpose |
+|---------|--------|
+| `product_revenue` | Product & supplier pricing analysis |
+| `inventory_status` | Inventory & capacity monitoring |
+| `supplier_goods` | Supplier → goods relationship |
+| `staff_supplier` | Staff → supplier mapping |
+| `warehouse_utilization` | Warehouse capacity & utilization |
+| `multi_warehouse_goods` | Goods stored in multiple warehouses |
 
-View Name	Description
-product_revenue	Product pricing and supplier overview
-inventory_status	Inventory condition per warehouse
-warehouse_utilization	Warehouse capacity and stored goods
-supplier_goods	Supplier-to-goods relationship
-staff_supplier	Staff responsibility mapping
-multi_warehouse_goods	Goods stored in multiple warehouses
-
----
-
-## SQL scripts are located in:
-
-sql/
+These views act as a **semantic layer** for BI tools such as Power BI.
 
 ---
 
-## Power BI Dashboard
+## Power BI Dashboards
+The Power BI report is built **directly on top of the SQL views**.
 
-The Power BI dashboard connects directly to the SQL views and provides decision-ready visuals.
+### Dashboard Pages
+1. **Management Overview**
+   - Supplier & product summaries
+   - Goods count per supplier
+   - High-level KPIs
 
-Dashboard Pages
+2. **Inventory Control**
+   - Inventory status (OK / LOW / FULL)
+   - Warehouse capacity overview
 
-Product & Price Overview
-
-Inventory Status
-
-Warehouse Utilization
-
-Supplier Goods Overview
-
-Staff & Supplier Mapping
-
-Multi-Warehouse Goods
-
----
-
-## Power BI files are located in:
-
-powerbi/
+3. **Warehouse & Logistics Performance**
+   - Warehouse utilization
+   - Goods stored across multiple locations
 
 ---
-
-## Dashboard screenshots:
-
-powerbi/screenshots/
-
----
-
 
 ## Technology Stack
-
-Database: MySQL
-
-SQL Client: VS Code + SQLTools
-
-Reporting: Power BI Desktop
-
-Version Control: Git & GitHub
+- **Database:** MySQL  
+- **SQL Client:** VS Code + SQLTools  
+- **BI Tool:** Microsoft Power BI  
+- **Languages:** SQL, DAX  
+- **Version Control:** Git & GitHub  
 
 ---
 
-## How to Run the Project
 
-# 1 Database Setup
+## How to View Results
 
-Create a MySQL database
-
-Run scripts in this order:
-
-create_tables.sql
-
-insert_data.sql
-
-views.sql
+### SQL Results
+- SQL query result screenshots are located inside: /sql/screenshots/
 
 ---
 
-# 2 Power BI Setup
 
-Open Warehouse_BI_Dashboard.pbix
-
-Update MySQL connection if needed
-
-Refresh data
+### Power BI Results
+- Power BI dashboard screenshots are located inside: /powerbi/screenshots/
 
 ---
 
-# 3 View Results
 
-SQL results:
-See screenshots inside sql/screenshorts/
+To explore the full interactive report:
+1. Download `Warehouse_Inventory_BI.pbix`
+2. Open it using **Power BI Desktop**
+3. Ensure MySQL is running and views are created
 
-Power BI results:
-See screenshots inside powerbi/screenshots/
+---
+
+## How to Run the Project Locally
+
+### 1️ Database Setup
+
+`sql
+SOURCE sql/schema.sql;
+SOURCE sql/inserts.sql;
+SOURCE sql/views.sql;
+
+### 2 Power BI Connection
+
+- Data Source: MySQL
+
+- Server: localhost
+
+- Database: your database name
+
+- Load all SQL views
 
 ---
 
