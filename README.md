@@ -2,10 +2,7 @@
 **SQL-Based Business Intelligence Project with Power BI**
 
 ## Project Overview
-This project demonstrates a **practical Business Intelligence (BI) and Data Analytics solution** based on an **ERP-style relational database**.  
-The goal is to provide **decision-ready reporting and KPIs** for **warehouse, inventory, supplier, and staff analysis**, similar to real-world use cases in companies.
-
-The project focuses on **SQL, data modeling, KPI reporting, and Power BI dashboards**.
+This project demonstrates a **practical Business Intelligence (BI) and Data Analytics solution** based on an **ERP-style relational database**. The goal is to provide **decision-ready reporting and KPIs** for **warehouse, inventory, supplier, and staff analysis**, similar to real-world use cases in companies. The project focuses on **SQL, data modeling, KPI reporting, and Power BI dashboards**.
 
 ---
 
